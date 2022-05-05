@@ -1,0 +1,12 @@
+<div  class="input-div">
+    
+    <div  class="input-list" 
+          cdkDropList 
+          id="input-list"
+          [cdkDropListData]="itemList"   
+          [cdkDropListConnectedTo]="targetListIds"
+          (cdkDropListDropped)="drop($event)">
+      <app-item cdkDrag *ngFor="let item of itemList" [baseColor]="item.baseColor" [id]="item.id"></app-item>
+    </div>
+</div>
+

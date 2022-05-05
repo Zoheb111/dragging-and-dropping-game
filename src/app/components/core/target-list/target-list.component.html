@@ -1,0 +1,16 @@
+<div class="target-div">
+
+
+
+    <div  class="target-list" 
+          cdkDropList 
+          [id]="targetItem.listId"
+          *ngFor="let targetItem of targetList" 
+          [style.border-color]="targetItem.baseColor"
+          [cdkDropListConnectedTo]="['input-list']"
+          [cdkDropListData]="targetItem.items" 
+          (cdkDropListDropped)="drop($event)">
+          <app-item cdkDrag *ngFor="let item of targetItem.items" [baseColor]="item.baseColor" [id]="item.id"></app-item>
+    </div>
+</div>
+
